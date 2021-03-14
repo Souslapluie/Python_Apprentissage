@@ -2,33 +2,44 @@
 
 from time import sleep
 
-h_bon = (h >= 0) and (h <= 23)
-m_bon = (m >= 0) and (m <= 59)
-s_bon = (s >= 0) and (s <= 59)
+quest = input ("Saisissez le moment auquel vous avez spawn au format hh/mm/ss : ")
+time = quest.split("/", 3)
+print(time)
+
+h_bon = (time[0] >= 0) and (time[0] <= 23)
+m_bon = (time[1] >= 0) and (time[1] <= 59)
+s_bon = (time[2] >= 0) and (time[2] <= 59)
+
+if len(time) != 3:
+    print("Il y a plus de 2 chiffres dans un de vos nombres entre les slashs.")
+if h_bon or m_bon or s_bon == str:
+    print("Essayez plutôt avec uniquement des nombres.")
+    exit
 
 
-time = input("Saisissez le moment auquel vous avez spawn au format hh/mm/ss : ")
 
 print("\nVous êtes censé arriver à 12h, 21m et 11s. Voyons voir si vous avez accompli votre devoir...")
 
-if not h_bon or not m_bon or not s_bon :
+if not h_bon or not m_bon or not s_bon:
     print("        Saisie incorrecte. Une des valeurs entrée par vos soins ne correspond pas aux valeurs temporelles programmées.")
-          
+
 print("     Calcul des ordinateurs quantiques aux 4 coins de la planète.... Veuillez patienter...")
 
 sleep(5)
 
-h = int
-m = int
-s = int
+h = 0
+m = 0
+s = 0
 time = h and m and s
 
 print("\nEn fait, on sait pas trop.")
 
 sleep(2.5)
 
-print("Les intelligences artificielles vont mettre les humains au chomâge + revenu universel, y compris dans les domaines de l'humour comme vous pouvez le voir.")
+print("Les intelligences artificielles vont mettre les humains au chomâge + revenu universel, y compris dans les domaines de l'humour comme vous pouvez le constater.")
 print("\n En vrai, voici la réponse : \n")
 
-if h <= 12 and m <= 21 and s <= 11  :
-    print("        Vous êtes en avance. Vos chances d'obtenir une augmentation de salaire passe de 0.000001% à 0.00001%")
+if h <= 12 and m <= 21 and s <= 11:
+    print("        Vous êtes en avance. Vos chances d'obtenir une augmentation de salaire passe de 0.000001% à 0.0000002%")
+
+
