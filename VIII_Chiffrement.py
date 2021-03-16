@@ -1,5 +1,7 @@
+# Cryptopython = http://www.emmanuelmorand.net/programmation/ChiffrementEnPython/ChiffrementEnPython.pdf 
+
 """
-printer = "hello, friend"
+printer = "hello, friend."
 
 print(printer[2:5])
 
