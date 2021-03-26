@@ -21,8 +21,9 @@
 		
 """
 
+
 from datetime import datetime
-import time
+from time import time
 from time import sleep
 
 print("\n             Bienvenue au camp d'entraînement. ")
@@ -38,7 +39,13 @@ print("\nVous allez vous entraîner sur la clef de passe suivante : ", SPass)
 
 Confirm = input ("\nConfirmez que c'est bel et bien avec cette clef de passe que vous allez vous entraîner.\n(Y/N ou Q pour quitter) : ")
 
-if Confirm.upper() == 'Y' :
+if Confirm.upper() == 'Q' :
+	exit()
+
+elif Confirm.upper() == 'N' :
+	break
+
+elif Confirm.upper() == 'Y' :
     print("\nEntraînement de tapage de mot de passe ! Ecrivez-le, le plus rapidement possible.\n")
     print("           Commencement au 'GO' dans 4 secondes :")
     sleep(1)
@@ -54,19 +61,11 @@ if Confirm.upper() == 'Y' :
     ChronoFin = time.clock()
     result = ChronoFin - ChronoDeb
             
-    elif VPass == SPass :
-                print("\nVous avez correctement recopié votre création. Temps d'exécution : ", result)
-                break
-
-    else VPass != SPass :
-                print("Votre création n'a pas été parfaitement recopiée. Temps d'exécution : ", result)
-                break
-
-if Confirm.upper() == 'Q' :
-            break
-
-else Confirm.upper() == 'N' :
-            exit()
+elif VPass == SPass :
+	print("\nVous avez correctement recopié votre création. Temps d'exécution : ", result)
+      
+else VPass != SPass :
+	print("Votre création n'a pas été parfaitement recopiée. Temps d'exécution : ", result)
 
 
 print("Fin")
